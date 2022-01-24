@@ -16,21 +16,34 @@
     let anchorTags = document.querySelectorAll('a');
 
     //create toggle switch
-    let toggleBtn = document.createElement('button');
+    let toggleBtn = document.createElement('input');
+    toggleBtn.setAttribute('type', 'checkbox');
     toggleBtn.textContent = "Dark Mode Toggle";
     body.appendChild(toggleBtn);
 
     let handleToggle = (event)=> {
-        //turns bg black and text white including anchor tags
-        body.style.color = "white"
-        body.style.backgroundColor = "black";
-
-        //loop through all anchor tags change to light blue
-        for (let anchor of anchorTags) {
-            if (anchor.value !== "") {
-                anchor.style.color = "#ADD8E6";
+        if (toggleBtn.checked) {
+            //turns bg black and text white including anchor tags
+            body.style.color = "white";
+            body.style.backgroundColor = "black";
+            //loop through all anchor tags change to light blue
+            for (let anchor of anchorTags) {
+                if (anchor.value !== "") {
+                    anchor.style.color = "#ADD8E6";
+                }
+            }
+        } else {
+            //turns bg black and text white including anchor tags
+            body.style.color = "black";
+            body.style.backgroundColor = "white";
+            //loop through all anchor tags change to light blue
+            for (let anchor of anchorTags) {
+                if (anchor.value !== "") {
+                    anchor.style.color = "blue";
+                }
             }
         }
+
     }
 
     //listen for click event on button
