@@ -28,7 +28,7 @@
     const btn = document.querySelector('.switch');
 
     btn.innerHTML = `<input type="checkbox">
-         <span class="slider round"></span>`;
+         <span class="slider round"></span></input>`;
     let toggleBtn = document.querySelector('.switch input');
 
 
