@@ -110,8 +110,9 @@ document.head.appendChild(style);
         if (toggleBtn.checked) {
             //turns bg black and text white including anchor tags
             for (let elem of allElem) {
-                if (elem.nodeName === 'IMG') return;
-                elem.style.backgroundColor = 'black';
+                if (elem.nodeName !== 'IMG') {
+                elem.style.backgroundColor = 'black'
+                }
                 if (!elem.textContent === '') return;
                 elem.style.color = 'white';
             }
