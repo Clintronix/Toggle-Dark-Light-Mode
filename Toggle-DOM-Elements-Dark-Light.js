@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Toggle Dark Light Mode
 // @namespace    http://tampermonkey.net/
-// @version      2.2 - Updated Input
-// @description  Change DOM text to black or white
+// @version      2.3
+// @description  Change DOM text to black or white - fix collecting all elements
 // @author       Clinton Cregger
 // @match        http*://*.com/*
 // @icon         https://www.google.com/s2/favicons?domain=tampermonkey.net
@@ -12,8 +12,10 @@
 (function() {
     'use strict';
     //variables
+    console.log("this works")
+
+
     let body = document.querySelector('body');
-    let allElem = document.querySelectorAll('*');
     let anchorTags = document.querySelectorAll('a');
 
 
@@ -101,7 +103,10 @@ input:checked + .slider:before {
 
 document.head.appendChild(style);
 
+        window.onload = function() {
     let handleToggle = (event)=> {
+
+    let allElem = document.querySelectorAll('*');
         if (toggleBtn.checked) {
             //turns bg black and text white including anchor tags
             for (let elem of allElem) {
@@ -131,7 +136,9 @@ document.head.appendChild(style);
         }
 
     }
+
     //listen for click event on button
     toggleBtn.addEventListener('click', handleToggle);
+    }
 
 })();
