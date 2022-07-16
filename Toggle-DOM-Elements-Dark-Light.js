@@ -112,7 +112,7 @@ document.head.appendChild(style);
             for (let elem of allElem) {
                 if (elem.nodeName === 'IMG') return;
                 elem.style.backgroundColor = 'black';
-                if (!elem.value === '') return;
+                if (!elem.textContent === '') return;
                 elem.style.color = 'white';
             }
             //loop through all anchor tags change to light blue
