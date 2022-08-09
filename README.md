@@ -7,4 +7,4 @@ You can add this extension to your Chrome
 2. Add userscript
 3. turn on userscript 
 4. go to your favorite website
-It works well with my portfolio https://www.t3chvision.com & https://www.w3schools.com/html/html_elements.asp
+It works well with my portfolio https://www.t3chvision.com 
